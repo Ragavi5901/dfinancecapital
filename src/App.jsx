@@ -6,6 +6,7 @@ import OurMission from "./Components/OurMission";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
 import About from "./Components/About";
+import Signup from "./Components/Signup";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           }
         />
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </Router>
   );
