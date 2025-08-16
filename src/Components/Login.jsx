@@ -1,5 +1,7 @@
 import React from "react";
 import { FaUser, FaLock } from "react-icons/fa";
+
+import { IoIosArrowForward  } from "react-icons/io"; 
 import { Link } from "react-router-dom";
 
 const Login = () => {
@@ -57,14 +59,15 @@ const Login = () => {
         </button>
 
         {/* Sign up link */}
-        <p className="text-center text-gray-500 mt-6 text-sm">
-          No account?{" "}
+        <div className="text-end text-gray-500 mt-6 text-sm">
+         
           <Link
           to="/signup"
-          className="flex items-center text-white font-bold hover:text-yellow-400 transition"
-        >  Sign up
+         className="flex items-end  font-bold hover:text-yellow-400 transition"
+      
+        >  Sign up <IoIosArrowForward className="ml-2" />
           </Link>
-        </p>
+        </div>
       </div>
     </div>
   );
