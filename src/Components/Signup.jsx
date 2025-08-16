@@ -1,65 +1,69 @@
 import React from "react";
-import { User, Lock } from "lucide-react";
+import { FaUser, FaLock } from "react-icons/fa";
 
-const Signup = () => {
+import { IoIosArrowForward  } from "react-icons/io"; 
+import { Link } from "react-router-dom";
+
+const Login = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-[#d9d9d9] to-[#113061]">
-      <div className="w-full max-w-4xl bg-white shadow-xl rounded-lg flex">
-        {/* Left side background */}
-        <div
-          className="hidden md:block w-1/2 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/Hero.jpg')", 
-          }}
-        ></div>
+    <div className="relative w-full h-screen flex items-center justify-center bg-gray-900">
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-80"
+        style={{ backgroundImage: "url('Hero.webp')" }} // replace with your bg
+      ></div>
 
-        {/* Right side form */}
-        <div className="w-full md:w-1/2 p-10 flex flex-col justify-center relative">
-          {/* Logo */}
+      {/* Overlay (blue gradient) */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent to-blue-900/90"></div>
+
+      {/* Login Card */}
+      <div className="relative z-10 bg-white rounded-lg shadow-lg p-10 w-full max-w-md">
+        {/* Logo */}
         <div className="flex items-center justify-center mb-6">
           <img src="logo.png" alt="Logo" className="h-12" />
         </div>
 
-          {/* Phone Number */}
-          <div className="mb-6">
-            <div className="flex items-center border-b border-gray-400">
-              <User className="w-5 h-5 text-gray-500 mr-2" />
-              <input
-                type="text"
-                placeholder="Please input your phone number"
-                className="w-full py-2 bg-transparent outline-none text-gray-700"
-              />
-            </div>
-          </div>
+        <h2 className="text-2xl font-semibold text-gray-800 mb-6">Sign Up</h2>
 
-          {/* Password */}
-          <div className="mb-6">
-            <div className="flex items-center border-b border-gray-400">
-              <Lock className="w-5 h-5 text-gray-500 mr-2" />
-              <input
-                type="password"
-                placeholder="Please input a password"
-                className="w-full py-2 bg-transparent outline-none text-gray-700"
-              />
-            </div>
-          </div>
+        {/* Phone number input */}
+        <div className="flex items-center border-b border-gray-300 mb-6">
+          <FaUser className="text-gray-500 mr-3" />
+          <input
+            type="text"
+            placeholder="Please input your phone number"
+            className="w-full py-2 focus:outline-none"
+          />
+        </div>
 
-          {/* Button */}
-          <button className="w-full py-3 bg-white border border-gray-400 rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-100 transition">
-            Sign up <span className="ml-1">→</span>
-          </button>
+        {/* Password input */}
+        <div className="flex items-center border-b border-gray-300 mb-6">
+          <FaLock className="text-gray-500 mr-3" />
+          <input
+            type="password"
+            placeholder="Please input a password"
+            className="w-full py-2 focus:outline-none"
+          />
+        </div>
 
-          {/* Footer text */}
-          <p className="mt-6 text-center text-gray-500">
-            I have an account{" "}
-            <a href="/login" className="text-blue-600 font-medium">
-              To login
-            </a>
-          </p>
+        
+        {/* Login Button */}
+        <button className="w-full flex items-center justify-center bg-white border-2 border-black text-black font-medium py-2 rounded-full hover:bg-black hover:text-white transition">
+          Sign Up <span className="ml-2">→</span>
+        </button>
+
+        {/* Sign up link */}
+        <div className="text-end text-gray-500 mt-6 text-sm">
+         
+          <Link
+          to="/login"
+         className="flex items-end  font-bold hover:text-yellow-400 transition"
+      
+        >  Log In <IoIosArrowForward className="ml-2" />
+          </Link>
         </div>
       </div>
     </div>
   );
 };
 
-export default Signup;
+export default Login;
